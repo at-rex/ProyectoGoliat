@@ -36,10 +36,10 @@ public class MainMenuPrincipal extends AppCompatActivity {
         btnbebidas = findViewById(R.id.btnbebidas);
         btnalcohol = findViewById(R.id.btnalcohol);
         btnlimpieza = findViewById(R.id.btnlimpieza);
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //DatabaseReference myRef = database.getReference("message");
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
 
-        //myRef.setValue("Hello, World!");
+        myRef.setValue("Hello, World!");
         //Lista de Productos recientes
         listaProductos = new ArrayList<>();
         recyclerProductos = findViewById(R.id.recicler);
@@ -87,6 +87,21 @@ public class MainMenuPrincipal extends AppCompatActivity {
             }
         });
     }
+    private void llenarProductos() {
+        listaProductos.add(new Producto("Pilsen 1 L", "S/.7.00", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Cristal 1 L", "S/.7.00", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Sazonadores", "S/.1.00", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Lavavajillas en pasta 800g", "S/.5.00", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Inca Kola 1.5 L", "S/.5.00", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Papel Toalla ELITE", "S/.6.20", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Coca Cola 1.5 L", "S/.5.00", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Rellenitas (Fresa)", "S/.0.60", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Rellenitas (Coco)", "S/.0.60", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Inca Kola 1 L", "S/.3.20", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Mermelada", "S/.1.50", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Coca Cola 1 L", "S/.3.20", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Harina", "S/.0.99", R.drawable.logo_cuadrado));
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -110,19 +125,5 @@ public class MainMenuPrincipal extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void llenarProductos() {
-        listaProductos.add(new Producto("Pilsen 1 L", "S/.7.00", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Cristal 1 L", "S/.7.00", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Sazonadores", "S/.1.00", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Lavavajillas en pasta 800g", "S/.5.00", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Inca Kola 1.5 L", "S/.5.00", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Papel Toalla ELITE Mega Rollo", "S/.6.20", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Coca Cola 1.5 L", "S/.5.00", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Rellenitas (Fresa)", "S/.0.60", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Rellenitas (Coco)", "S/.0.60", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Inca Kola 1 L", "S/.3.20", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Mermelada", "S/.1.50", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Coca Cola 1 L", "S/.3.20", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Harina", "S/.0.99", R.drawable.logo_cuadrado));
-    }
+
 }

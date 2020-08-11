@@ -47,7 +47,7 @@ public class AdaptadorCard extends RecyclerView.Adapter<AdaptadorCard.ViewHolder
     public class ViewHolderProductos extends RecyclerView.ViewHolder {
         TextView txtnombrep, txtpreciop, txtValor;
         ImageView imgproducto;
-        Button btnReducir, btnAumentar /*btncarrito*/;
+        Button btnReducir, btnAumentar/*, btncarrito*/;
         int i = 0;
         public ViewHolderProductos(@NonNull View itemView) {
             super(itemView);
