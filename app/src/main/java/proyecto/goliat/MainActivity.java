@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
         cargarCategoria("Cristal 1L", 7.00, "BAlcoholicas","test");
         cargarCategoria("Doña Gusta 7g", 1.00, "Abarrotes","test");
         //cargarCategoria("Lavavajillas en pasta 800g", "S/.5.00", "test");
-        cargarCategoria("Inca Kola 1.5L", 5.00, "Bebidas","test");
+        cargarCategoria("Inca Kola 1,5L", 5.00, "Bebidas","test");
         cargarCategoria("Papel Toalla Elite Mega Rollo", 6.20, "PLimpieza","test");
-        cargarCategoria("Coca Cola 1.5L", 5.00, "Bebidas","test");
+        cargarCategoria("Coca Cola 1,5L", 5.00, "Bebidas","test");
         cargarCategoria("Rellenitas (Fresa)", 0.60, "Golosinas","test");
         cargarCategoria("Rellenitas (Coco)", 0.60, "Golosinas","test");
         cargarCategoria("Inca Kola 1L", 3.20, "Bebidas","test");
