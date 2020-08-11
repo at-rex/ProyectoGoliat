@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "30786386338",
+    "firebase_url": "https://proyectodam-f84b3.firebaseio.com",
+    "project_id": "proyectodam-f84b3",
+    "storage_bucket": "proyectodam-f84b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30786386338:android:4ec2eca4bffc8bbc045afb",
+        "android_client_info": {
+          "package_name": "proyecto.goliat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "30786386338-cq5pbo2ioqbqjopjj17ovd9h8v9q4rjm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSAcEUcCc2hA9m-2_9-FRz9N35REcpws8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "30786386338-cq5pbo2ioqbqjopjj17ovd9h8v9q4rjm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
