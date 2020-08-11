@@ -27,8 +27,6 @@ public class ListAbarrotes extends AppCompatActivity {
         AdaptadorAbarrotes adapter = new AdaptadorAbarrotes(listAbarrotes);
         reciclerAbarrotes.setAdapter(adapter);
     }
-
-
     private void llenarProductos() {
         listAbarrotes.add(new Producto("Avena", "S/.1.00", R.drawable.logo_cuadrado));
         listAbarrotes.add(new Producto("Café", "S/.1.50", R.drawable.logo_cuadrado));
