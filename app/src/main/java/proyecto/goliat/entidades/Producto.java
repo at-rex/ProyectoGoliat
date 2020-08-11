@@ -5,15 +5,23 @@ public class Producto {
     private String nombre;
     private String precio;
     private String categoria;
+    //private String foto;
     private int foto;
 
     public Producto(){
     }
 
-    public Producto(String nombre, String precio, int foto) {
+    public Producto(String precio, String categoria, int foto) {
+        this.precio = precio;
+        this.foto = foto;
+        this.categoria = categoria;
+    }
+
+    public Producto(String nombre, String precio, String categoria, int foto) {
         this.nombre = nombre;
         this.precio = precio;
         this.foto = foto;
+        this.categoria = categoria;
     }
     public Producto(int idproducto, String nombre, String precio, int foto) {
         this.idproducto = idproducto;

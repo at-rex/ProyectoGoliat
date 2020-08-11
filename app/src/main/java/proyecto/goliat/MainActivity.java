@@ -57,7 +57,19 @@ public class MainActivity extends AppCompatActivity {
         listaCategorias = new ArrayList<>();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
-        cargarCategoria();
+        cargarCategoria("Pilsen 1L",7.00, "BAlcoholicas","test");
+        cargarCategoria("Cristal 1L", 7.00, "BAlcoholicas","test");
+        cargarCategoria("Doña Gusta 7g", 1.00, "Abarrotes","test");
+        //cargarCategoria("Lavavajillas en pasta 800g", "S/.5.00", "test");
+        cargarCategoria("Inca Kola 1.5L", 5.00, "Bebidas","test");
+        cargarCategoria("Papel Toalla Elite Mega Rollo", 6.20, "PLimpieza","test");
+        cargarCategoria("Coca Cola 1.5L", 5.00, "Bebidas","test");
+        cargarCategoria("Rellenitas (Fresa)", 0.60, "Golosinas","test");
+        cargarCategoria("Rellenitas (Coco)", 0.60, "Golosinas","test");
+        cargarCategoria("Inca Kola 1L", 3.20, "Bebidas","test");
+        cargarCategoria("Mermelada Fanny 100g", 1.50, "Abarrotes","test");
+        cargarCategoria("Coca Cola 1L", 3.20, "Bebidas","test");
+        cargarCategoria("Harina BlancaFlor 1Kg", 4.00, "Abarrotes","test");
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,10 +107,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private void cargarCategoria(){
-        String keyfirebase = databaseReference.push().getKey();
-        Producto c = new Producto("Pilsen 1 L", "S/.7.00", R.drawable.logo_cuadrado);
+    private void cargarCategoria(String nombre, double precio, String categoria, String foto){
+        //String keyfirebase = databaseReference.push().getKey();
+        //Producto c = new Producto("S/.7.00", "S",123);
+        Map<String,Object> map = new HashMap<>();
+        map.put("precio",precio);
+        map.put("categoria",categoria);
+        map.put("foto",foto);
         //databaseReference.child("Categorias").child(keyfirebase).setValue(c);
-        databaseReference.child("Categorias").child("Abarrotes").setValue(c);
+        databaseReference.child("Productos").child(nombre).setValue(map);
+    }
+
+    private void cargarProducto(){
+
     }
 }
