@@ -45,23 +45,30 @@
                 android:layout_height="match_parent"
                 android:gravity="end|center"
                 android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/btnReducir"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:text="-"/>
+                    android:background="@android:drawable/ic_media_rew"
+                    android:backgroundTint="#000000"
+                    android:gravity="top" />
 
                 <TextView
                     android:id="@+id/txtValor"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
                     android:gravity="center"
-                    android:text="0" />
+                    android:text="0"
+                    android:textColor="#000000"
+                    app:drawableTint="#000000" />
+
                 <Button
                     android:id="@+id/btnAumentar"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:text="+"/>
+                    android:background="@android:drawable/ic_media_ff"
+                    android:backgroundTint="#000000" />
             </LinearLayout>
         </LinearLayout>
         <ImageButton

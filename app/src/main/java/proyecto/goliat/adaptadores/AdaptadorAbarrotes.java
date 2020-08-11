@@ -46,13 +46,14 @@ public class AdaptadorAbarrotes extends RecyclerView.Adapter<AdaptadorAbarrotes.
 
         TextView txtnombrep, txtpreciop, txtValor;
         ImageView imgproducto;
-        Button btnReducir, btnAumentar;
+        Button btnReducir, btnAumentar, btncarritolista;
         int i = 0;
         public ViewHolderAbarrotes(@NonNull View itemView) {
             super(itemView);
             txtnombrep = itemView.findViewById(R.id.txtnombreplista);
             txtpreciop = itemView.findViewById(R.id.txtprecioplista);
             imgproducto = itemView.findViewById(R.id.imgproductolista);
+            btncarritolista = itemView.findViewById(R.id.btncarritolista);
             txtValor = itemView.findViewById(R.id.txtValor);
             btnReducir = itemView.findViewById(R.id.btnReducir);
             btnAumentar = itemView.findViewById(R.id.btnAumentar);
@@ -66,6 +67,12 @@ public class AdaptadorAbarrotes extends RecyclerView.Adapter<AdaptadorAbarrotes.
                 @Override
                 public void onClick(View v) {
                     txtValor.setText(""+i++);
+                }
+            });
+            btncarritolista.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //AGREGAR A LISTA
                 }
             });
         }

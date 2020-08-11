@@ -1,11 +1,15 @@
 package proyecto.goliat.vistas;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -32,10 +36,10 @@ public class MainMenuPrincipal extends AppCompatActivity {
         btnbebidas = findViewById(R.id.btnbebidas);
         btnalcohol = findViewById(R.id.btnalcohol);
         btnlimpieza = findViewById(R.id.btnlimpieza);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        //FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //DatabaseReference myRef = database.getReference("message");
 
-        myRef.setValue("Hello, World!");
+        //myRef.setValue("Hello, World!");
         //Lista de Productos recientes
         listaProductos = new ArrayList<>();
         recyclerProductos = findViewById(R.id.recicler);
@@ -83,6 +87,29 @@ public class MainMenuPrincipal extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mimenu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id){
+            case R.id.mnCarrito:
+                Intent intent2 = new Intent(MainMenuPrincipal.this,MainCarrito.class);
+                startActivity(intent2);
+                break;
+            case R.id.mnPedidos:
+                Intent intent3 = new Intent(MainMenuPrincipal.this,MainPedidos.class);
+                startActivity(intent3);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void llenarProductos() {
         listaProductos.add(new Producto("Pilsen 1 L", "S/.7.00", R.drawable.logo_cuadrado));
         listaProductos.add(new Producto("Cristal 1 L", "S/.7.00", R.drawable.logo_cuadrado));
