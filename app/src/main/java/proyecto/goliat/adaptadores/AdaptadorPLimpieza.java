@@ -3,6 +3,7 @@ package proyecto.goliat.adaptadores;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,13 +42,37 @@ public class AdaptadorPLimpieza extends RecyclerView.Adapter<AdaptadorPLimpieza.
     }
 
     public class ViewHolderAdaptadorPLimpieza extends RecyclerView.ViewHolder{
-        TextView txtnombrep, txtpreciop;
+        TextView txtnombrep, txtpreciop, txtValor;
         ImageView imgproducto;
+        Button btnReducir, btnAumentar, btncarritolista;
+        int i = 0;
         public ViewHolderAdaptadorPLimpieza(@NonNull View itemView) {
             super(itemView);
             txtnombrep = itemView.findViewById(R.id.txtnombreplista);
             txtpreciop = itemView.findViewById(R.id.txtprecioplista);
             imgproducto = itemView.findViewById(R.id.imgproductolista);
+            btncarritolista = itemView.findViewById(R.id.btncarritolista);
+            txtValor = itemView.findViewById(R.id.txtValor);
+            btnReducir = itemView.findViewById(R.id.btnReducir);
+            btnAumentar = itemView.findViewById(R.id.btnAumentar);
+            btnReducir.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    txtValor.setText(""+i--);
+                }
+            });
+            btnAumentar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    txtValor.setText(""+i++);
+                }
+            });
+            btncarritolista.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //AGREGAR A LISTA
+                }
+            });
         }
     }
 }

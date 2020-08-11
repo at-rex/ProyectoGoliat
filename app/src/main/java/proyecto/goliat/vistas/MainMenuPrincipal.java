@@ -1,11 +1,15 @@
 package proyecto.goliat.vistas;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -89,7 +93,7 @@ public class MainMenuPrincipal extends AppCompatActivity {
         listaProductos.add(new Producto("Sazonadores", "S/.1.00", R.drawable.logo_cuadrado));
         listaProductos.add(new Producto("Lavavajillas en pasta 800g", "S/.5.00", R.drawable.logo_cuadrado));
         listaProductos.add(new Producto("Inca Kola 1.5 L", "S/.5.00", R.drawable.logo_cuadrado));
-        listaProductos.add(new Producto("Papel Toalla ELITE Mega Rollo", "S/.6.20", R.drawable.logo_cuadrado));
+        listaProductos.add(new Producto("Papel Toalla ELITE", "S/.6.20", R.drawable.logo_cuadrado));
         listaProductos.add(new Producto("Coca Cola 1.5 L", "S/.5.00", R.drawable.logo_cuadrado));
         listaProductos.add(new Producto("Rellenitas (Fresa)", "S/.0.60", R.drawable.logo_cuadrado));
         listaProductos.add(new Producto("Rellenitas (Coco)", "S/.0.60", R.drawable.logo_cuadrado));
@@ -98,4 +102,28 @@ public class MainMenuPrincipal extends AppCompatActivity {
         listaProductos.add(new Producto("Coca Cola 1 L", "S/.3.20", R.drawable.logo_cuadrado));
         listaProductos.add(new Producto("Harina", "S/.0.99", R.drawable.logo_cuadrado));
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mimenu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id){
+            case R.id.mnCarrito:
+                Intent intent2 = new Intent(MainMenuPrincipal.this,MainCarrito.class);
+                startActivity(intent2);
+                break;
+            case R.id.mnPedidos:
+                Intent intent3 = new Intent(MainMenuPrincipal.this,MainPedidos.class);
+                startActivity(intent3);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }

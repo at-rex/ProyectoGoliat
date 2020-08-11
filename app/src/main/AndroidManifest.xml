@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK" />
     <uses-permission android:name="android.permission.VIBRATE" />
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -17,23 +16,57 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".vistas.MainPedidos"
+            android:label="Pedidos"></activity>
+        <activity android:name=".vistas.MainFinalizarPedido"
+            android:label="Finalizar Pedido"></activity>
+        <activity android:name=".vistas.MainCarrito"
+            android:label="Carrito de Compras">
+        </activity>
         <activity android:name=".vistas.MainRegistro"></activity>
-        <activity android:name=".vistas.MainMenuPrincipal" />
+        <activity
+            android:name=".vistas.MainMenuPrincipal"
+            android:label="Menu Principal" />
         <activity
             android:name=".vistas.ListPLimpieza"
-            android:label="@string/limpieza" />
+            android:label="@string/limpieza"
+            android:parentActivityName=".vistas.MainMenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".vistas.MainMenuPrincipal" />
+        </activity>
         <activity
             android:name=".vistas.ListBAlcoholicas"
-            android:label="@string/alcohol" />
+            android:label="@string/alcohol"
+            android:parentActivityName=".vistas.MainMenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".vistas.MainMenuPrincipal" />
+        </activity>
         <activity
             android:name=".vistas.ListBebidas"
-            android:label="@string/bebidas" />
+            android:label="@string/bebidas"
+            android:parentActivityName=".vistas.MainMenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".vistas.MainMenuPrincipal" />
+        </activity>
         <activity
             android:name=".vistas.ListGolosinas"
-            android:label="@string/golosinas" />
+            android:label="@string/golosinas"
+            android:parentActivityName=".vistas.MainMenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".vistas.MainMenuPrincipal" />
+        </activity>
         <activity
             android:name=".vistas.ListAbarrotes"
-            android:label="@string/abarrotes" />
+            android:label="@string/abarrotes"
+            android:parentActivityName=".vistas.MainMenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".vistas.MainMenuPrincipal" />
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
