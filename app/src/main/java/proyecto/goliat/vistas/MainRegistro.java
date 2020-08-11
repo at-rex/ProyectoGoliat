@@ -83,13 +83,12 @@ public class MainRegistro extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     String id = mAuth.getCurrentUser().getUid();
-                    String key = databaseReference.push().getKey();
                     Map<String,Object> map = new HashMap<>();
                     map.put("correo",correo);
                     map.put("clave",clave);
                     map.put("nombre",nombre);
                     map.put("apellidos",apellidos);
-                    databaseReference.child("Usuario").child(key).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    databaseReference.child("Usuario").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if (task2.isSuccessful()){
